@@ -144,8 +144,8 @@ The **DMAIC (Six Sigma) framework** was applied to structure the analysis:
 - Lean Six Sigma Black Belt — Benchmark Six Sigma
 - Former Senior Accounts Manager managing 30+ NHS hospital accounts
 
-📧 karantrivedi8@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/karan-r-trivedi-b9a96a56)
+📧 krntrivedi@gmail.com
+🔗 [LinkedIn](linkedin.com/in/karan-r-trivedi-b9a96a56)
 🐙 [GitHub](https://github.com/Karant15)
 
 ---
