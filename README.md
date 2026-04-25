@@ -3,6 +3,8 @@
 <img width="1918" height="912" alt="dashboard_screenshot" src="https://github.com/user-attachments/assets/604409f0-ff71-46b6-8209-ef01b9d40e7c" />
 <img width="1910" height="965" alt="Geographic Map" src="https://github.com/user-attachments/assets/9782b5de-823a-40f5-8ae5-050701b73a1c" />
 <img width="1918" height="968" alt="Recruitment Gap analysts" src="https://github.com/user-attachments/assets/6d6fe8a3-ae6d-498f-b077-b7fa776df28b" />
+## 🔴 Live Dashboard
+👉 [Click here to open the live dashboard](YOUR_STREAMLIT_URL)
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red)](https://streamlit.io)
@@ -62,7 +64,7 @@ CMS Medicare API  — Real US government data source
 healthcare-workforce-analytics/
 │
 ├── data/
-│   └── Medicare_Physician_Other_Practitioners_2022.csv
+│   └── Medicare_Physician_Other_Practitioners_2023.csv
 │
 ├── outputs/
 │   ├── 01_specialty_provider_counts.html
@@ -145,7 +147,7 @@ The **DMAIC (Six Sigma) framework** was applied to structure the analysis:
 - Former Senior Accounts Manager managing 30+ NHS hospital accounts
 
 📧 krntrivedi@gmail.com
-🔗 [LinkedIn](linkedin.com/in/karan-r-trivedi-b9a96a56)
+🔗 [LinkedIn](https://www.linkedin.com/in/karan-r-trivedi-b9a96a56)
 🐙 [GitHub](https://github.com/Karant15)
 
 ---
