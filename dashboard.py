@@ -14,31 +14,14 @@ def load_data():
                  'MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC',
                  'ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
                  'VT','VA','WA','WV','WI','WY']
-
-    # Load sample data directly from CMS government website
-    url = "https://data.cms.gov/api/1/datastore/query/fc9d1052-bcd0-4f12-937f-8a46b36a2d40/0?results_format=csv&limit=100000"
-    
-    try:
-        df = pd.read_csv(url)
-    except Exception as e:
-        # Fallback — load sample data inline so app never breaks
-        st.warning("Loading cached sample data.")
-        data = {
-            'Rndrng_NPI': range(100),
-            'Rndrng_Prvdr_Last_Org_Name': ['Sample']*100,
-            'Rndrng_Prvdr_First_Name': ['Provider']*100,
-            'Rndrng_Prvdr_Type': (['Internal Medicine']*20 + ['Family Practice']*20 +
-                                   ['Nurse Practitioner']*20 + ['Cardiology']*20 +
-                                   ['Neurology']*20),
-            'Rndrng_Prvdr_City': ['St Louis']*100,
-            'Rndrng_Prvdr_State_Abrvtn': (['MO']*20 + ['IL']*20 + ['CA']*20 +
-                                           ['NY']*20 + ['TX']*20),
-            'Tot_Benes': [100]*100,
-            'Tot_Srvcs': [150.0]*100,
-            'Avg_Mdcr_Pymt_Amt': [85.0]*100,
-        }
-        df = pd.DataFrame(data)
-        return df
+    url = "https://raw.githubusercontent.com/Karant15/Healthcare-Workforce-Analytics/master/data/cms_sample.csv"
+    df = pd.read_csv(url, low_memory=False)
+    df = df[df['Rndrng_Prvdr_State_Abrvtn'].isin(us_states)]
+    df = df.dropna(subset=['Rndrng_Prvdr_Type','Rndrng_Prvdr_State_Abrvtn'])
+    df['Tot_Benes'] = pd.to_numeric(df['Tot_Benes'], errors='coerce').fillna(0)
+    df['Tot_Srvcs'] = pd.to_numeric(df['Tot_Srvcs'], errors='coerce').fillna(0)
+    df['Avg_Mdcr_Pymt_Amt'] = pd.to_numeric(df['Avg_Mdcr_Pymt_Amt'], errors='coerce').fillna(0)
+    return df
 
     df = df[df['Rndrng_Prvdr_State_Abrvtn'].isin(us_states)]
     df = df.dropna(subset=['Rndrng_Prvdr_Type','Rndrng_Prvdr_State_Abrvtn'])
