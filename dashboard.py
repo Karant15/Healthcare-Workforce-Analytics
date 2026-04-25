@@ -9,27 +9,23 @@ st.set_page_config(page_title="Healthcare Workforce Analytics", page_icon="🏥"
 
 @st.cache_data
 def load_data():
-    filename = os.listdir('data')[0]
+    url = "https://data.cms.gov/api/1/datastore/query/fc9d1052-bcd0-4f12-937f-8a46b36a2d40/0?limit=100000&offset=0&results_format=csv"
+    st.info("Loading live CMS Medicare data from data.cms.gov...")
+    
     us_states = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI',
                  'ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI',
                  'MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC',
                  'ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT',
                  'VT','VA','WA','WV','WI','WY']
-
-    # Load in chunks and sample — keeps RAM low, insights stay real
-    chunks = []
-    chunk_iter = pd.read_csv(
-        rf'C:\Users\13142\Desktop\healthcare-workforce-analytics\data\{filename}',
-        low_memory=False,
-        chunksize=500000
-    )
-    for chunk in chunk_iter:
-        chunk = chunk[chunk['Rndrng_Prvdr_State_Abrvtn'].isin(us_states)]
-        chunk = chunk.dropna(subset=['Rndrng_Prvdr_Type','Rndrng_Prvdr_State_Abrvtn'])
-        # Take 20% sample from each chunk — still 1.9M real records
-        chunks.append(chunk.sample(frac=0.2, random_state=42))
-
-    df = pd.concat(chunks, ignore_index=True)
+    
+    try:
+        df = pd.read_csv(url)
+    except Exception:
+        st.error("Could not load live data. Please check connection.")
+        st.stop()
+    
+    df = df[df['Rndrng_Prvdr_State_Abrvtn'].isin(us_states)]
+    df = df.dropna(subset=['Rndrng_Prvdr_Type','Rndrng_Prvdr_State_Abrvtn'])
     df['Tot_Benes'] = pd.to_numeric(df['Tot_Benes'], errors='coerce').fillna(0)
     df['Tot_Srvcs'] = pd.to_numeric(df['Tot_Srvcs'], errors='coerce').fillna(0)
     df['Avg_Mdcr_Pymt_Amt'] = pd.to_numeric(df['Avg_Mdcr_Pymt_Amt'], errors='coerce').fillna(0)
