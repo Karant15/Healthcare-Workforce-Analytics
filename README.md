@@ -10,7 +10,7 @@
 [![Records](https://img.shields.io/badge/Records-9.6M-orange)](https://data.cms.gov)
 ---
 
-## 📌 Business Problem
+##  Business Problem
 
 Healthcare organizations and staffing companies spend millions annually trying to identify **where physician shortages exist** and **which specialties need urgent recruitment**. This project answers that question using real US government Medicare data.
 
@@ -22,7 +22,7 @@ Healthcare organizations and staffing companies spend millions annually trying t
 
 ---
 
-## 📊 Dashboard Features
+##  Dashboard Features
 
 | Tab | What It Shows | Business Value |
 |-----|--------------|----------------|
@@ -34,7 +34,7 @@ Healthcare organizations and staffing companies spend millions annually trying t
 
 ---
 
-## 🔍 Key Findings
+##  Key Findings
 
 - **Nurse Practitioners (174,250)** and **Physician Assistants (94,708)** are the most supplied specialties
 - **Wyoming, Vermont, and Alaska** have the highest recruitment priority scores (97%+)
@@ -44,7 +44,7 @@ Healthcare organizations and staffing companies spend millions annually trying t
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ```
 Python 3.11       — Core analysis
@@ -56,7 +56,7 @@ CMS Medicare API  — Real US government data source
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 healthcare-workforce-analytics/
@@ -79,7 +79,7 @@ healthcare-workforce-analytics/
 
 ---
 
-## 🚀 How To Run Locally
+##  How To Run Locally
 
 ```bash
 # Clone the repository
@@ -104,7 +104,7 @@ streamlit run dashboard.py
 
 ---
 
-## 📋 Requirements
+##  Requirements
 
 ```
 pandas
@@ -118,7 +118,7 @@ openpyxl
 
 ---
 
-## 💡 Domain Context
+##  Domain Context
 
 This project leverages **7 years of healthcare domain expertise** including managing data-driven client relationships with **30+ NHS hospitals** in the UK. The analytical framework mirrors real-world healthcare staffing workflows used by companies like AMN Healthcare, Aya Healthcare, and ID Medical.
 
@@ -131,16 +131,16 @@ The **DMAIC (Six Sigma) framework** was applied to structure the analysis:
 
 ---
 
-## 📈 Business Impact
+##  Business Impact
 
 > *"By identifying that Wyoming has a 97.7% recruitment priority score and that Family Practice carries the highest patient load per provider, healthcare staffing companies can allocate recruitment resources 3x more efficiently than using intuition alone."*
 
 ---
 
-## 👤 About
+##  About
 
 **Karan Trivedi** | MS Data Analytics, Webster University (Dec 2024)
-- 7+ years experience in healthcare, recruitment, and business analytics
+- 7+ years of experience in healthcare, recruitment, and business analytics
 - Lean Six Sigma Black Belt — Benchmark Six Sigma
 - Former Senior Accounts Manager managing 30+ NHS hospital accounts
 
